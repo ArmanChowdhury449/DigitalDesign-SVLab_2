@@ -53,8 +53,8 @@ always_comb begin
     2'b11: begin // execute
         enable = 1'b1;
         invalid_opcode = 1'b0;
-        pc++;
         if (done) begin
+            pc++;
             next_state = 2'b01;
         end
     end
