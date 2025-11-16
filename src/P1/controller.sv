@@ -44,13 +44,19 @@ always_comb begin
         b = instruction[7:0];
         if(opcode == 4'b1111) begin
             next_state = 2'b00;
+        end else if (opcode >= 4'b0100) begin
+            invalid_opcode = 1'b1;
         end else begin
             next_state = 2'b11;
         end
     end
     2'b11: begin // execute
         enable = 1'b1;
+        invalid_opcode = 1'b0;
         pc++;
+        if (done) begin
+            next_state = 2'b01;
+        end
     end
     endcase
 end
