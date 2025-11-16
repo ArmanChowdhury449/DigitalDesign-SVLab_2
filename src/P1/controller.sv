@@ -34,10 +34,6 @@ always_comb begin
         end
     end
     2'b01: begin // fetch instruction
-        enable = 1'b0;
-        invalid_opcode = 1'b0;
-        pc = '0;
-        opcode = '0;
         next_state = 2'b10;
     end
     2'b10: begin // get opcode, a, b
@@ -58,6 +54,9 @@ always_comb begin
         enable = 1'b1;
         invalid_opcode = 1'b0;
         if (done) begin
+            enable = 1'b0;
+            invalid_opcode = 1'b0;
+            opcode = '0;
             pc++;
             next_state = 2'b01;
         end
