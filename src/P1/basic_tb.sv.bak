@@ -131,6 +131,7 @@ localparam int ADDR = 5;
       
         #20;
        $display("=== Test Finished ===");
+       $finish;
     end
        
 endmodule
