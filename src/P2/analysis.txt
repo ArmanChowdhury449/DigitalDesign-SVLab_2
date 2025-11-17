@@ -1,0 +1,1 @@
+The opcodes and the inputs a and b were randomized in bins across their entire range (0:255 for the inputs and 0:15 for the opcode). This resulted in a lot of tests spent on testing values that would not be realistic for the system's normal operation. which would be numerous invalid opcodes in this case. This is a disadvantage of complete randomization.
