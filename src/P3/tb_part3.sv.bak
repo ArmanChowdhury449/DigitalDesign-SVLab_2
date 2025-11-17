@@ -58,8 +58,6 @@ localparam int PROG_LEN =100;
 	  b inside {[0:255]};
           a > b;
         } else if (opcode == 4'b0011) { //multiply
-	  a inside {[0:255]};
-	  b inside {[0:255]};
           a % 2 == 0;
           b % 2 != 0;
         } else if (opcode == 4'b1011) { // gcd
